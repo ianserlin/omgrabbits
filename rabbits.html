@@ -1,0 +1,31 @@
+<head>
+  <title>rabbits</title>
+</head>
+
+<body>
+  {{> rabbits}}
+</body>
+
+<template name="rabbits">
+  <h1>Hello Rabbit World!</h1>
+  {{> newRabbit}}
+  <ul>
+  	{{#each rabbits}}
+		{{> rabbit}}
+	{{/each}}
+  </ul>
+</template>
+
+<template name="rabbit">
+	<li>{{name}} - {{age}} <a href="#"><small class="remove">remove</small></a></li>
+</template>
+
+<template name="newRabbit">
+	<strong>New Rabbit</strong>
+	<br/>
+	<label>Name</label>
+	<input id="rabbitName" placeholder="Name"/>
+	<label>Age</label>
+	<input id="rabbitAge" placeholder="Age"/>
+	<button id="newRabbit">Create Bunny</button>
+</template>
